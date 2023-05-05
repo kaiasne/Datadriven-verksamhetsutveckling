@@ -8,7 +8,6 @@ import csv
 from nltk.metrics.distance import edit_distance
 
 
-
 # Define the target sentence
 target_sentence = "sysselsättning"
 
