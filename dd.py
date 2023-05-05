@@ -1,3 +1,7 @@
+# Först kör nedan pip install
+
+# pip install nltk
+
 import nltk
 nltk.download('all')
 import pandas as pd
