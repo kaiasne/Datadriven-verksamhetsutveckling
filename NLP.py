@@ -45,6 +45,3 @@ for i, adjectives in enumerate(adjectives_data):
 
 # # Print the most common words
 # print(word_counts.most_common(20))
-
-
-
