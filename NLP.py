@@ -3,6 +3,8 @@ import pandas as pd
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from collections import Counter
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import sent_tokenize
 
 # Read in CSV file
 data = pd.read_csv('datatest_nr1.csv')
@@ -43,3 +45,6 @@ for i, adjectives in enumerate(adjectives_data):
 
 # # Print the most common words
 # print(word_counts.most_common(20))
+
+
+
