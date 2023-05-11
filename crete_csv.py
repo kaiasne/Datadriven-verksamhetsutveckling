@@ -11,7 +11,6 @@ jobtech_sample = jobtech_data.sample(n=1000, random_state=42)
 # export the selected rows to a new CSV file
 jobtech_sample.to_csv('jobtech_dataset2022_sample.csv', index=False)
 
-
 # open input CSV file as source
 # open output CSV file as result
 with open("jobtech_dataset2022_sample.csv", "r") as source:
