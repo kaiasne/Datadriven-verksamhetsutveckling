@@ -1,3 +1,5 @@
+# OBS! Kod uppdaterad så den räcknar antalet gånger Göteborg och liknande städer finns med
+
 import nltk
 from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
@@ -7,19 +9,17 @@ from nltk.corpus import gutenberg
 import csv
 from nltk.metrics.distance import edit_distance
 
-
-
 # Define the target sentence
-target_sentence = "sysselsättning"
+target_sentence = "Göteborg"
 
 # Open the CSV file and extract the sentences
-with open('datatest_nr1.csv', newline='', encoding='utf-8') as csvfile:
+with open('Test_sys - Test_sys.csv', newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
-    sentences = [row['description'] for row in reader]
+    sentences = [row['workplace_address'] for row in reader]
 
 # Search for the target sentence and similar sentences
 similar_sentences = []
-threshold_distance = 5  # Maximum edit distance for a sentence to be considered similar
+threshold_distance = 3  # Maximum edit distance for a sentence to be considered similar
 target_count = 0
 
 for sentence in sentences:
