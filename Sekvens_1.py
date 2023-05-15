@@ -2,6 +2,7 @@ import pandas as pd
 import csv
 import json
 import sys
+#Kör programmet genom att trycka in (python Sekvens_1.py "Filnamn".jsonl) i Terminalen.
 
 # check if the user provided a filename
 if len(sys.argv) != 2:
