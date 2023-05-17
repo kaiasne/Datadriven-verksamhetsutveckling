@@ -16,3 +16,6 @@ Plotly används för att få fram grafer och på så sätt visa på trender
 ```bash
 pip install plotly
 ```
+**NLTK**
+Används som paket för att processa och gå igenom data, används både i när vi tar bort data från workplace_address kolumnen men främst när vi söker efter key_words i description
+
