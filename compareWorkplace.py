@@ -5,7 +5,7 @@ import pandas as pd
 import altair as alt
 
 # Load data
-df = pd.read_csv('output.csv')
+df = pd.read_csv('output_merge.csv')
 
 # Convert Headline column to string data type
 df['Headline'] = df['Headline'].astype(str)
@@ -20,20 +20,20 @@ selected_workplaces = st.sidebar.multiselect('Välj komun', workplaces)
 df_workplaces = df[df['Workplace'].isin(selected_workplaces)]
 
 # Group data by quarter, workplace, and headline, and sum vacancies
-df_workplaces_grouped = df_workplaces.groupby(['Quarter', 'Workplace', 'Headline']).sum().reset_index()
+df_workplaces_grouped = df_workplaces.groupby(['MergedColumn', 'Workplace', 'Headline']).sum().reset_index()
 
 # Create line chart with larger tooltip area
 line_chart = alt.Chart(df_workplaces_grouped).mark_line().encode(
-    x=alt.X('Quarter:O', title='Kvartal'),
-    y=alt.Y('VacancyCount', title='Antall jobb'),
+    x=alt.X('MergedColumn:O', title='Kvartal'),
+    y=alt.Y('VacancyCount', title='Antal jobb'),
     color='Workplace',
     tooltip=[
         alt.Tooltip('Headline', title='Jobbannonsen'),
-        alt.Tooltip('VacancyCount', title='Antall jobber')
+        alt.Tooltip('VacancyCount', title='Antal jobb')
     ],
     size=alt.value(2)  # Set tooltip size to 150
 ).properties(
-    title='Antall jobb per kvartal',
+    title='Antal jobb per kvartal',
     width=600,
     height=400
 ).configure_mark(
