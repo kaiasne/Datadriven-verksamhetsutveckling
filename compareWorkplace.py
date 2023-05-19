@@ -5,7 +5,7 @@ import pandas as pd
 import altair as alt
 
 # Load data
-df = pd.read_csv('output_merge.csv')
+df = pd.read_csv('2021_2022_Streamlit.csv')
 
 # Convert Headline column to string data type
 df['Headline'] = df['Headline'].astype(str)
