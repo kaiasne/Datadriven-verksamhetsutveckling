@@ -32,11 +32,11 @@ pip install plotly
 **NLTK**
 Används som paket för att processa och gå igenom data, används både i när vi tar bort data från workplace_address kolumnen men främst när vi söker efter key_words i description. Denna är installerad sedan tidigare när man kör kod via Conda
 
-*Användning*
+##Användning
 
 Kör filen main_STREAMLIT.py i terminalen. Du kommer därefter få en prompt om att köra streamlit applikationen. Kör denna 
 ```bash
-'c:/main_STREAMLIT.py'
+streamlit run 'c:/main_STREAMLIT.py'
 ```
 Appen kommer nu öppna sig i webbläsaren och användaren kan nu använda listan till vänster för att skriva in eller välja en eller flera kommunera att jämföra.
 
@@ -44,5 +44,5 @@ Linjediagrammet kommer att visa antalet lediga jobb per kvartal för den valda a
 
 Avsnittet "Aktiva jobbannonser" i sidofältet visar aktiva jobbannonser med motsvarande webbadresser (URL:er).
 
-**License**
+##License
 This project is licensed under the MIT License
