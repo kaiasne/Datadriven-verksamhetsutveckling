@@ -111,7 +111,7 @@ for quarter, vacancy_counts in vacancy_counts_quarterly.items():
         # Shuffle the rows
         shuffled_rows = rows.sample(frac=1, random_state=1)
         # Select 5 random headlines if available
-        selected_rows = shuffled_rows.head(5) if len(shuffled_rows) >= 5 else shuffled_rows
+        selected_rows = shuffled_rows.head(5) if len(shuffled_rows) >= 4 else shuffled_rows
         # Retrieve the headlines as a list
         headlines = selected_rows[headline_column].tolist()
         # Append a row to the output DataFrame

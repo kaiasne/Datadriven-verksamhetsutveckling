@@ -22,6 +22,7 @@ df_workplaces = df[df['Workplace'].isin(selected_workplaces)]
 # Group data by quarter, workplace, and headline, and sum vacancies
 df_workplaces_grouped = df_workplaces.groupby(['MergedColumn', 'Workplace', 'Headline']).sum().reset_index()
 
+
 # Create line chart with larger tooltip area
 line_chart = alt.Chart(df_workplaces_grouped).mark_line().encode(
     x=alt.X('MergedColumn:O', title='Kvartal'),
@@ -49,6 +50,11 @@ line_chart = alt.Chart(df_workplaces_grouped).mark_line().encode(
 ).configure_legend(
     title=None  # Remove legend title
 )
-
+with st.sidebar.expander("Aktiva jobbannonser:"):
+    # Display the URL code
+    st.markdown('[Kundsupport SEB, Stockholm](https://arbetsformedlingen.se/platsbanken/annonser/27610844)')
+    st.markdown('[Arbetare till lager, Eskilstuna](https://arbetsformedlingen.se/platsbanken/annonser/27311340)')
+    st.markdown('[Extrajobb till terminal, Helsingborg ](https://arbetsformedlingen.se/platsbanken/annonser/27594109)')
+    st.markdown('[Lagerarbetare DHL, Jönköping](https://arbetsformedlingen.se/platsbanken/annonser/27576294)')
 # Render the chart using Streamlit
 st.altair_chart(line_chart, use_container_width=True)
