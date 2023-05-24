@@ -8,8 +8,15 @@ df = pd.read_csv('MAIN_2021_2022.csv')
 # Convert Headline column to string data type
 df['Headline'] = df['Headline'].astype(str)
 
+# Define the desired height and calculate the corresponding width
+desired_height = 100
+width_to_height_ratio = 2  # Adjust this ratio according to your needs
+desired_width = int(desired_height * width_to_height_ratio)
+
 # Get list of unique workplaces
 workplaces = df['Workplace'].dropna().unique()
+
+st.sidebar.image("sdff.png", caption="SDFF", width=desired_width,)
 
 # Sidebar for selecting workplaces
 selected_workplaces = st.sidebar.multiselect('Välj komun', workplaces)
@@ -49,10 +56,16 @@ line_chart = alt.Chart(df_workplaces_grouped).mark_line().encode(
 )
 with st.sidebar.expander("Aktiva jobbannonser:"):
     # Display the URL code
-    st.markdown('[Kundsupport SEB, Stockholm](https://arbetsformedlingen.se/platsbanken/annonser/27610844)')
-    st.markdown('[Arbetare till lager, Eskilstuna](https://arbetsformedlingen.se/platsbanken/annonser/27311340)')
-    st.markdown('[Extrajobb till terminal, Helsingborg ](https://arbetsformedlingen.se/platsbanken/annonser/27594109)')
-    st.markdown('[Lagerarbetare DHL, Jönköping](https://arbetsformedlingen.se/platsbanken/annonser/27576294)')
+    st.markdown('[Butiksmedarbetare Sportringen, Sundsvall](https://arbetsformedlingen.se/platsbanken/annonser/27620458)')
+    st.markdown('[Kundtjänstrådgivare SEB, Sundsvall](https://arbetsformedlingen.se/platsbanken/annonser/27638437)')
+    st.markdown('[Kassamedarbetare Elgiganten, Östersund ](https://arbetsformedlingen.se/platsbanken/annonser/27621622)')
+    st.markdown('[Kundtjänstmedarbetare Telenor, Östersund](https://arbetsformedlingen.se/platsbanken/annonser/27533949)')
+
+with st.sidebar.expander("Unika jobbannonser för SDFF:"):
+    # Display the URL code
+    st.markdown('[Receptionist för Länsförsäkringar, Sundsvall](https://arbetsformedlingen.se/platsbanken/annonser/27610844)')
+    st.markdown('[Löneadministatör HSB, Sundsvall ](https://arbetsformedlingen.se/platsbanken/annonser/27311340)')
+    st.markdown('[Fastighetsskötare, NP3 Sundsvall ](https://arbetsformedlingen.se/platsbanken/annonser/27594109)')
 
 # Render the chart using Streamlit
 st.altair_chart(line_chart, use_container_width=True)
