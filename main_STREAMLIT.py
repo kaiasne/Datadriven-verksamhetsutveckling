@@ -16,7 +16,7 @@ desired_width = int(desired_height * width_to_height_ratio)
 # Get list of unique workplaces
 workplaces = df['Workplace'].dropna().unique()
 
-st.sidebar.image("sdff.png", caption="SDFF", width=desired_width,)
+st.sidebar.image("sdff.png", caption="Sundsvalls Damfotbollsförening", width=desired_width,)
 
 # Sidebar for selecting workplaces
 selected_workplaces = st.sidebar.multiselect('Välj komun', workplaces)
