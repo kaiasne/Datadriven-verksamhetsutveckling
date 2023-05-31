@@ -1,6 +1,8 @@
 # Datadriven-verksamhetsutveckling
 
-I mappen Test/bos finns fler filer som har använts för att testa nya idéer och nya funktioner som  sedermera inte har fungerat. Dessa innehåller allt ifrån test kring visualisering, NLP men främst olika sätt att plocka ut och hämta data. 
+I mapparna som har label Test finns flera filer som har använts för att testa nya idéer och nya funktioner som sedermera inte har fungerat. Dessa innehåller allt ifrån test kring visualisering, NLP men främst olika sätt att plocka ut och hämta data. 
+
+För att utvinna den data som behövs finns det 4 olika filer som sedan kan appliceras och köras i med Streamlit. Samtliga ligger i mappen Create dataset. De är därefter numrerade i den ordning de ska köras. Observera att man kan behöva uppdatera filnamn etc på de filer som är input. 
 
 ## Paket + installtion
 För att köra det slutgiltliga programmet använder vi nedan paket.
@@ -43,6 +45,8 @@ Appen kommer nu öppna sig i webbläsaren och användaren kan nu använda listan
 Linjediagrammet kommer att visa antalet lediga jobb per kvartal för den valda arbetsplatsen. Hovra över datapunkterna för att se rubriken och antalet lediga jobb i verktygstipset.
 
 Avsnittet "Aktiva jobbannonser" i sidofältet visar aktiva jobbannonser med motsvarande webbadresser (URL:er).
+
+Avsnittet "Unika jobbannonser för SDFF" i sidofältet visar ett exempel på de jobbannonser som en förening skulle kunna visa i sin portal. (URL:er).
 
 ## License
 This project is licensed under the MIT License
